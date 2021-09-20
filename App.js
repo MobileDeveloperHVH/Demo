@@ -6,9 +6,10 @@ import State from './state';
 import Formik from './formik';
 import HookForm from './hookForm';
 import KeyboardAwareView from './keyboardAwareView';
+import Buoi3 from './buoi3';
 
 export default function App() {
     return (
-        <KeyboardAwareView />
+        <Buoi3 />
     );
 }
