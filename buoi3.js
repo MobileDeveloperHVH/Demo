@@ -59,7 +59,7 @@ export default function Buoi3() {
                     <Text style={styles.signUpTitle}>Sign Up</Text>
                     <ScrollView
                         style={[{flex: 1, alignSelf: 'stretch'}]}
-                        keyboardShouldPersistTaps={true}
+                        keyboardShouldPersistTaps='always'
                         automaticallyAdjustContentInsets={false}
                         scrollEventThrottle={200}
                         keyboardDismissMode='on-drag'
