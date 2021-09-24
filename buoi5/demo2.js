@@ -18,16 +18,16 @@ export default function Demo2() {
     }, []);
 
 
-    function onLoading(){
+    const onEndReached = React.useCallback(() => {
         setLoading(true);
-        for (let i = 0; i < 15 ; i ++) {
-            array.push(Math.random());
-        }
-        setData(array);
         setTimeout(() => {
+            for (let i = 0; i < 15 ; i ++) {
+                array.push(Math.random());
+            }
+            setData(array);
             setLoading(false);
         },3000);
-    }
+    }, [data]);
 
 
     function renderItem(props) {
@@ -60,8 +60,8 @@ export default function Demo2() {
                 data={data}
                 renderItem={renderItem}
                 keyExtractor={item => item.toString()}
-                onEndReached={onLoading}
-                onEndReachedThreshold={10}
+                onEndReachedThreshold={0}
+                onEndReached={onEndReached}
                 ListFooterComponent={
                     <React.Fragment>
                         {
